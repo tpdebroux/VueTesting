@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title> Visualization </title>
+  <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+  <svg id="chart" :width="chartWidth" :height="chartHeight" v-on:click="handleClick">
+    <g
+      v-for="(value, i) in chartData"
+      :transform="`translate(0, ${i * 40})`">
+      <rect height="30" :width="barWidth(value)"></rect>
+      <text y="15" :x="barWidth(value) - 20">{{ value }}</text>
+    </g>
+  </svg>
+	<script src="https://unpkg.com/vue"></script>
+	<script src="main.js"></script>
+</body>
+</html>
